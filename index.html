@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
+        <link rel="stylesheet" href="./assets/css/style.css" />
+        <title>Weather Dashboard</title>
+    </head>
+    <body>
+
+        <header class="col-12 text-white bg-primary">
+            <h1 class="text-center">Weather Dashboard</h1>
+        </header>
+
+        <main>
+            <div class="col-4 float-left"> 
+                <div class="card">
+                    <h3 class="card-header text-uppercase">Search for a City:</h3>
+                    <form id="city-form" class="card-body">
+                        <input name="city" id="city" type="text" autofocus="true" class="form-input col-12" />
+                        <button type="submit" class="btn text-white bg-info">search</button>
+                    </form>
+                </div>
+            
+                <div class="card">
+                    <h3 class="card-header text-uppercase">Popular Cities</h3>
+                    <div id="city-buttons"  class="card-body">
+                        <button data-city="austin" class="btn">Austin</buttons>
+                        <button data-city="chicago" class="btn">Chicago</buttons>
+                        <button data-city="new-york" class="btn">New York</buttons> 
+                        <button data-city="orlando" class="btn">Orlando</buttons>
+                        <button data-city="san-francisco" class="btn">San Francisco</buttons>
+                        <button data-city="seattle" class="btn">Seattle</buttons> 
+                        <button data-city="denver" class="btn">Denver</buttons>
+                        <button data-city="Atlanta" class="btn">Atlanta</buttons>    
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-8 float-right">
+                <div class="card">
+                    <h2 class="subtitle">Showing weather for: <span id="repo-search-term"></span></h2>
+                    <div id="today-container" class="list-group"></div>
+                        <ul>
+                            <li class="characteristic">Temp:</li>
+                            <li class="characteristic">Wind:</li>
+                            <li class="characteristic">Humidity:</li>
+                            <li class="characteristic">UV Index:</li>
+                        </ul>
+                </div>
+
+                <div class="card">
+                    <h3 class="subtitle">5-Day Forecast:</h3>
+                    <div id="five-day-container"></div>
+                        <div class="row">
+                            <div class="forecast-card col-2">
+                                <h4>Day #1</h4>
+                                    <p>Current:</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Humidity</p>
+                        </div>
+                            
+                            <div class="forecast-card col-2">
+                                <h4>Day #2</h4>
+                                    <p>Current:</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Humidity</p>
+                            </div>
+
+                            <div class="forecast-card col-2">
+                                <h4>Day #3</h4>
+                                    <p>Current:</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Humidity</p>
+                            </div>
+
+                            <div class="forecast-card col-2">
+                                <h4>Day #4</h4>
+                                    <p>Current:</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Humidity</p>
+                                </div>
+
+                            <div class="forecast-card col-2">
+                                <h4>Day #5</h4>
+                                    <p>Current:</p>
+                                    <p>Temp:</p>
+                                    <p>Wind:</p>
+                                    <p>Humidity</p>
+                            </div>
+                        </div>    
+                    </div>
+                </div>
+
+
+            </div>
+        </main>   
+    </body>
+</html>
