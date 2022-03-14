@@ -19,7 +19,7 @@
             <div class="col-4 float-left"> 
                 <div class="card">
                     <h3 class="card-header text-uppercase">Search for a City:</h3>
-                    <form id="city-form" class="card-body">
+                    <form id="city-search" class="card-body">
                         <input name="city" id="city" type="text" autofocus="true" class="form-input col-12" />
                         <button type="submit" class="btn text-white bg-info">search</button>
                     </form>
@@ -42,8 +42,8 @@
 
             <div class="col-8 float-right">
                 <div class="card">
-                    <h2 class="subtitle">Showing weather for: <span id="repo-search-term"></span></h2>
-                    <div id="today-container" class="list-group"></div>
+                    <h2>Showing weather for: <span id="selected-city"></span></h2>
+                    <div id="current-weather-container" class="list-group"></div>
                         <ul>
                             <li class="characteristic">Temp:</li>
                             <li class="characteristic">Wind:</li>
@@ -101,6 +101,10 @@
 
 
             </div>
-        </main>   
+        </main> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+        <script src="./assets/js/script.js"></script>  
     </body>
 </html>
