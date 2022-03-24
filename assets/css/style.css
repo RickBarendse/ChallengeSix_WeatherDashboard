@@ -2,6 +2,14 @@ header {
     margin: 6px;
     padding: 6px;
 }
+
+#searchCity {
+    color: blue;
+}
+
+#today {
+    color: blue;
+}
 .characteristic {
    list-style: none; 
    font-size: x-large;
