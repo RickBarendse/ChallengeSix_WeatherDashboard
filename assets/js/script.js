@@ -6,6 +6,9 @@ var currentSearchCityEl = document.querySelector("#currentSearch")
 var currentDateEl = document.querySelector("#currentDate")
 var currentWeatherEl = document.querySelector("#current-weather-container")
 var currentSearchTempEl = document.querySelector('#currentTemp')
+var currentSearchWindEl = document.querySelector('#currentWind')
+var currentSearchHumidityEl = document.querySelector('#currentHumidity')
+var currentSearchUvIndexEl = document.querySelector('currentUvIndex')
 var apiKey = "ddcbe1b461d070064d430ea95f952674"
 
 
@@ -48,18 +51,26 @@ var displayWeather = function(city){
     currentWeatherEl.textContent="";
     citySearchEl=city;
 
-     // create date element
+     // create date elements for weather attributes
     var currentCityEl = document.createElement("span");
         currentCityEl.setAttribute("id", "searchCity");
+        currentCityEl.textContent = city.name;
     var today = document.createElement("span");
         today.setAttribute("id", "today");
-    var currentTempEl = document.createElement("span");
-        currentCityEl.textContent = city.name;
         today.textContent=moment(city.dt.value).format("MMM D, YYYY");
-        currentTempEl.textContent = city.main.temp + "F";
+    var currentTempEl = document.createElement("span");
+        currentTempEl.textContent = city.main.temp + " F";
+    var currentWindEl = document.createElement("span");
+        currentWindEl.textContent = city.wind.speed + " MPH";
+    var currentHumidityEl = document.createElement("span");
+        currentHumidityEl.textContent = city.main.humidity + " %";
+        
+        
         currentSearchCityEl.appendChild(currentCityEl);
         currentDateEl.appendChild(today);
         currentSearchTempEl.appendChild(currentTempEl);
+        currentSearchWindEl.appendChild(currentWindEl);
+        currentSearchHumidityEl.appendChild(currentHumidityEl);
 };
 
 cityFormEl.addEventListener("submit", formSubmitHandler);

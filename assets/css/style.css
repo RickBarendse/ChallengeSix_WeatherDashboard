@@ -16,6 +16,10 @@ header {
    font-weight: bold;
 }
 
+.characteristic span {
+    color: blue;
+}
+
 .card {
     margin: 4px;
     padding: 4px;
