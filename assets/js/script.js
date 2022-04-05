@@ -1,10 +1,11 @@
 // set global variables
 var cityFormEl = document.querySelector("#city-search");
 var cityInputEl = document.querySelector("#city");
-var currentSearchEl = document.querySelector("#currentSearch")
+var currentSearchCityEl = document.querySelector("#currentSearch")
 //var currentCityEl = document.querySelector("#selected-city")
 var currentDateEl = document.querySelector("#currentDate")
 var currentWeatherEl = document.querySelector("#current-weather-container")
+var currentSearchTempEl = document.querySelector('#currentTemp')
 var apiKey = "ddcbe1b461d070064d430ea95f952674"
 
 
@@ -29,7 +30,7 @@ var saveSearch = function() {
 
 // function to get the weather for city in search input
 var getWeather = function(city) {
-    var apiUrl = ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey);
+    var apiUrl = ("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial&appid=" + apiKey);
 
     fetch(apiUrl)
     .then(function(response) {
@@ -42,6 +43,8 @@ var getWeather = function(city) {
 
 var displayWeather = function(city){
      //clear old content
+    currentSearchCityEl.textContent="";
+    currentDateEl.textContent="";
     currentWeatherEl.textContent="";
     citySearchEl=city;
 
@@ -50,11 +53,13 @@ var displayWeather = function(city){
         currentCityEl.setAttribute("id", "searchCity");
     var today = document.createElement("span");
         today.setAttribute("id", "today");
-        currentCityEl.textContent =city.name;
+    var currentTempEl = document.createElement("span");
+        currentCityEl.textContent = city.name;
         today.textContent=moment(city.dt.value).format("MMM D, YYYY");
-        currentSearchEl.appendChild(currentCityEl);
+        currentTempEl.textContent = city.main.temp + "F";
+        currentSearchCityEl.appendChild(currentCityEl);
         currentDateEl.appendChild(today);
-        console.log(currentDateEl)
+        currentSearchTempEl.appendChild(currentTempEl);
 };
 
 cityFormEl.addEventListener("submit", formSubmitHandler);
