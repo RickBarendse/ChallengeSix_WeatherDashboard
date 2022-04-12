@@ -60,3 +60,6 @@ header {
     transform: translate(-1px, -1px);
   }
   
+  .forecast-card h4 {
+      justify-content: space-evenly;
+  }

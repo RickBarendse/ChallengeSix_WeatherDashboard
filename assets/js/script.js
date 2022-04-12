@@ -9,6 +9,8 @@ var currentSearchTempEl = document.querySelector('#currentTemp')
 var currentSearchWindEl = document.querySelector('#currentWind')
 var currentSearchHumidityEl = document.querySelector('#currentHumidity')
 var currentSearchUvIndexEl = document.querySelector('#currentUvIndex')
+var dayOneSearchEl = document.querySelector("#dayOne")
+var dayOneSearchTempEl = document.querySelector("#dayOneTemp")
 var apiKey = "ddcbe1b461d070064d430ea95f952674"
 
 
@@ -47,14 +49,14 @@ var getWeather = function(city) {
 
             // var getCurrentWeather = function() {
             //     getCurrentWeather(lat, lon);
-            var apiCurrentUrl = ("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid="  + apiKey);
+            var apiCurrentUrl = ("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid="  + apiKey);
             
             return fetch(apiCurrentUrl)
             .then(function(response) {
                 response.json().then(function(info) {
-                    console.log(info.current.uvi)
+                    console.log(info, info.current.uvi)    
+                    displayFiveDayWeather(info);
                 })
-            //     displayFiveDayWeather(lat, lon);
             }),
         displayCurrentWeather(data, city);
         });
@@ -93,11 +95,21 @@ var displayCurrentWeather = function(city){
         currentSearchHumidityEl.appendChild(currentHumidityEl);
 };
 
-// var displayFiveDayWeather = function(info) {
-//     var currentUvIndexEl = document.createElement("span");
-//     currentUvIndexEl.textContent = info.current.uvi; 
+var displayFiveDayWeather = function(info) {
+    for (let i = 0; i != info.daily.length; i+=8)
 
-//     currentSearchUvIndexEl.appendChile(currentUvIndexEl);
-// };
+    console.log(info.daily)
+    var currentUvIndexEl = document.createElement("span");
+        currentUvIndexEl.textContent = info.current.uvi; 
+    var dayOneEl = document.createElement("span");
+        dayOneEl.textContent = info.daily[7].dt;
+
+    var dayOneTempEl = document.createElement("span");
+        dayOneTempEl.textContent = info.daily[7].temp.day;
+
+    currentSearchUvIndexEl.appendChild(currentUvIndexEl);
+    dayOneSearchEl.appendChild(dayOneEl);
+    dayOneSearchTempEl.appendChild(dayOneTempEl);
+};
 
     cityFormEl.addEventListener("submit", formSubmitHandler);
