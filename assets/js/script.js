@@ -8,7 +8,7 @@ var currentWeatherEl = document.querySelector("#current-weather-container")
 var currentSearchTempEl = document.querySelector('#currentTemp')
 var currentSearchWindEl = document.querySelector('#currentWind')
 var currentSearchHumidityEl = document.querySelector('#currentHumidity')
-var currentSearchUvIndexEl = document.querySelector('currentUvIndex')
+var currentSearchUvIndexEl = document.querySelector('#currentUvIndex')
 var apiKey = "ddcbe1b461d070064d430ea95f952674"
 
 
@@ -38,18 +38,39 @@ var getWeather = function(city) {
     fetch(apiUrl)
     .then(function(response) {
         response.json().then(function(data){
-            console.log(data);
-        displayWeather(data, city);
+            var lat = (data.coord.lat)
+            var lon = (data.coord.lon)
+            //console.log(data)
+            console.log(data, city)
+            console.log(data, lat)
+            console.log(data, lon)
+
+            // var getCurrentWeather = function() {
+            //     getCurrentWeather(lat, lon);
+            var apiCurrentUrl = ("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&appid="  + apiKey);
+            
+            return fetch(apiCurrentUrl)
+            .then(function(response) {
+                response.json().then(function(info) {
+                    console.log(info.current.uvi)
+                })
+            //     displayFiveDayWeather(lat, lon);
+            }),
+        displayCurrentWeather(data, city);
         });
     });
-};
+}
 
-var displayWeather = function(city){
+var displayCurrentWeather = function(city){
      //clear old content
     currentSearchCityEl.textContent="";
     currentDateEl.textContent="";
     currentWeatherEl.textContent="";
+    currentSearchTempEl.textContent="";
+    currentSearchHumidityEl.textContent="";
+    currentSearchWindEl.textContent="";
     citySearchEl=city;
+
 
      // create date elements for weather attributes
     var currentCityEl = document.createElement("span");
@@ -65,7 +86,6 @@ var displayWeather = function(city){
     var currentHumidityEl = document.createElement("span");
         currentHumidityEl.textContent = city.main.humidity + " %";
         
-        
         currentSearchCityEl.appendChild(currentCityEl);
         currentDateEl.appendChild(today);
         currentSearchTempEl.appendChild(currentTempEl);
@@ -73,4 +93,11 @@ var displayWeather = function(city){
         currentSearchHumidityEl.appendChild(currentHumidityEl);
 };
 
-cityFormEl.addEventListener("submit", formSubmitHandler);
+// var displayFiveDayWeather = function(info) {
+//     var currentUvIndexEl = document.createElement("span");
+//     currentUvIndexEl.textContent = info.current.uvi; 
+
+//     currentSearchUvIndexEl.appendChile(currentUvIndexEl);
+// };
+
+    cityFormEl.addEventListener("submit", formSubmitHandler);
