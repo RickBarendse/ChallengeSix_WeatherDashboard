@@ -10,22 +10,27 @@ var currentSearchWindEl = document.querySelector('#currentWind')
 var currentSearchHumidityEl = document.querySelector('#currentHumidity')
 var currentSearchUvIndexEl = document.querySelector('#currentUvIndex')
 var dayOneSearchEl = document.querySelector("#dayOne")
+var dayOneSearchForecastEl = document.querySelector("#dayOneForecast")
 var dayOneSearchTempEl = document.querySelector("#dayOneTemp")
 var dayOneSearchWindEl = document.querySelector("#dayOneWind")
 var dayOneSearchHumidityEl = document.querySelector("#dayOneHumidity")
 var dayTwoSearchEl = document.querySelector("#dayTwo")
+var dayTwoSearchForecastEl = document.querySelector("#dayTwoForecast")
 var dayTwoSearchTempEl = document.querySelector("#dayTwoTemp")
 var dayTwoSearchWindEl = document.querySelector("#dayTwoWind")
 var dayTwoSearchHumidityEl = document.querySelector("#dayTwoHumidity")
 var dayThreeSearchEl = document.querySelector("#dayThree")
+var dayThreeSearchForecastEl = document.querySelector("#dayThreeForecast")
 var dayThreeSearchTempEl = document.querySelector("#dayThreeTemp")
 var dayThreeSearchWindEl = document.querySelector("#dayThreeWind")
 var dayThreeSearchHumidityEl = document.querySelector("#dayThreeHumidity")
 var dayFourSearchEl = document.querySelector("#dayFour")
+var dayFourSearchForecastEl = document.querySelector("#dayFourForecast")
 var dayFourSearchTempEl = document.querySelector("#dayFourTemp")
 var dayFourSearchWindEl = document.querySelector("#dayFourWind")
 var dayFourSearchHumidityEl = document.querySelector("#dayFourHumidity")
 var dayFiveSearchEl = document.querySelector("#dayFive")
+var dayFiveSearchForecastEl = document.querySelector("#dayFiveForecast")
 var dayFiveSearchTempEl = document.querySelector("#dayFiveTemp")
 var dayFiveSearchWindEl = document.querySelector("#dayFiveWind")
 var dayFiveSearchHumidityEl = document.querySelector("#dayFiveHumidity")
@@ -124,70 +129,85 @@ var displayFiveDayWeather = function(info) {
 
     var dayOneEl = document.createElement("span");
         dayOneEl.textContent = info.daily[1].dt;
+    var dayOneForecastEl = document.createElement("span");
+        dayOneForecastEl.textContent = info.daily[1].weather[0].icon;
     var dayOneTempEl = document.createElement("span");
-        dayOneTempEl.textContent = info.daily[1].temp.day + "   F";
+        dayOneTempEl.textContent = info.daily[1].temp.day + " F";
     var dayOneWindEl = document.createElement("span");
-        dayOneWindEl.textContent = info.daily[1].wind_speed + "  MPH";
+        dayOneWindEl.textContent = info.daily[1].wind_speed + " MPH";
     var dayOneHumidityEl = document.createElement("span");
-        dayOneHumidityEl.textContent = info.daily[1].humidity + "   %";
+        dayOneHumidityEl.textContent = info.daily[1].humidity + " %";
 
     var dayTwoEl = document.createElement("span");
         dayTwoEl.textContent = info.daily[2].dt;
+    var dayTwoForecastEl = document.createElement("span");
+        dayTwoForecastEl.textContent = info.daily[2].weather[0].icon;
     var dayTwoTempEl = document.createElement("span");
-        dayTwoTempEl.textContent = info.daily[2].temp.day + "   F";
+        dayTwoTempEl.textContent = info.daily[2].temp.day + " F";
     var dayTwoWindEl = document.createElement("span");
-        dayTwoWindEl.textContent = info.daily[2].wind_speed + "  MPH";
+        dayTwoWindEl.textContent = info.daily[2].wind_speed + " MPH";
     var dayTwoHumidityEl = document.createElement("span");
-        dayTwoHumidityEl.textContent = info.daily[2].humidity + "   %";
+        dayTwoHumidityEl.textContent = info.daily[2].humidity + " %";
 
     var dayThreeEl = document.createElement("span");
         dayThreeEl.textContent = info.daily[3].dt;
+    var dayThreeForecastEl = document.createElement("span");
+        dayThreeForecastEl.textContent = info.daily[3].weather[0].icon;    
     var dayThreeTempEl = document.createElement("span");
-        dayThreeTempEl.textContent = info.daily[3].temp.day + "   F";
+        dayThreeTempEl.textContent = info.daily[3].temp.day + " F";
     var dayThreeWindEl = document.createElement("span");
-        dayThreeWindEl.textContent = info.daily[3].wind_speed + "  MPH";
+        dayThreeWindEl.textContent = info.daily[3].wind_speed + " MPH";
     var dayThreeHumidityEl = document.createElement("span");
-        dayThreeHumidityEl.textContent = info.daily[3].humidity + "   %";
+        dayThreeHumidityEl.textContent = info.daily[3].humidity + " %";
 
     var dayFourEl = document.createElement("span");
         dayFourEl.textContent = info.daily[4].dt;
+    var dayFourForecastEl = document.createElement("span");
+        dayFourForecastEl.textContent = info.daily[4].weather[0].icon;
     var dayFourTempEl = document.createElement("span");
-        dayFourTempEl.textContent = info.daily[4].temp.day + "   F";
+        dayFourTempEl.textContent = info.daily[4].temp.day + " F";
     var dayFourWindEl = document.createElement("span");
-        dayFourWindEl.textContent = info.daily[4].wind_speed + "  MPH";
+        dayFourWindEl.textContent = info.daily[4].wind_speed + " MPH";
     var dayFourHumidityEl = document.createElement("span");
-        dayFourHumidityEl.textContent = info.daily[4].humidity + "   %";
+        dayFourHumidityEl.textContent = info.daily[4].humidity + " %";
     
     var dayFiveEl = document.createElement("span");
         dayFiveEl.textContent = info.daily[5].dt;
+    var dayFiveForecastEl = document.createElement("span");
+        dayFiveForecastEl.textContent = info.daily[5].weather[0].icon;
     var dayFiveTempEl = document.createElement("span");
-        dayFiveTempEl.textContent = info.daily[5].temp.day + "   F";
+        dayFiveTempEl.textContent = info.daily[5].temp.day + " F";
     var dayFiveWindEl = document.createElement("span");
-        dayFiveWindEl.textContent = info.daily[5].wind_speed + "  MPH";
+        dayFiveWindEl.textContent = info.daily[5].wind_speed + " MPH";
     var dayFiveHumidityEl = document.createElement("span");
-        dayFiveHumidityEl.textContent = info.daily[5].humidity + "   %";
+        dayFiveHumidityEl.textContent = info.daily[5].humidity + " %";
 
     dayOneSearchEl.appendChild(dayOneEl);
+    dayOneSearchForecastEl.appendChild(dayOneForecastEl);
     dayOneSearchTempEl.appendChild(dayOneTempEl);
     dayOneSearchWindEl.appendChild(dayOneWindEl);
     dayOneSearchHumidityEl.appendChild(dayOneHumidityEl);
 
     dayTwoSearchEl.appendChild(dayTwoEl);
+    dayTwoSearchForecastEl.appendChild(dayTwoForecastEl);
     dayTwoSearchTempEl.appendChild(dayTwoTempEl);
     dayTwoSearchWindEl.appendChild(dayTwoWindEl);
     dayTwoSearchHumidityEl.appendChild(dayTwoHumidityEl);
 
     dayThreeSearchEl.appendChild(dayThreeEl);
+    dayThreeSearchForecastEl.appendChild(dayThreeForecastEl);
     dayThreeSearchTempEl.appendChild(dayThreeTempEl);
     dayThreeSearchWindEl.appendChild(dayThreeWindEl);
     dayThreeSearchHumidityEl.appendChild(dayThreeHumidityEl);
 
     dayFourSearchEl.appendChild(dayFourEl);
+    dayFourSearchForecastEl.appendChild(dayFourForecastEl);
     dayFourSearchTempEl.appendChild(dayFourTempEl);
     dayFourSearchWindEl.appendChild(dayFourWindEl);
     dayFourSearchHumidityEl.appendChild(dayFourHumidityEl);
 
     dayFiveSearchEl.appendChild(dayFiveEl);
+    dayFiveSearchForecastEl.appendChild(dayFiveForecastEl);
     dayFiveSearchTempEl.appendChild(dayFiveTempEl);
     dayFiveSearchWindEl.appendChild(dayFiveWindEl);
     dayFiveSearchHumidityEl.appendChild(dayFiveHumidityEl);

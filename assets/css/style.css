@@ -21,8 +21,8 @@ header {
 }
 
 .card {
-    margin: 4px;
-    padding: 4px;
+    margin: 3px;
+    padding: 3px;
 }
 
 .row {
@@ -36,6 +36,7 @@ header {
 
 .forecast-card h4 {
     padding: 2px 0px 2px 0px;
+    justify-content: space-evenly;
 }
 
 .card p {
@@ -59,7 +60,5 @@ header {
     background-color: lightslategray;
     transform: translate(-1px, -1px);
   }
+
   
-  .forecast-card h4 {
-      justify-content: space-evenly;
-  }
