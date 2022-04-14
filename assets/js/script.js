@@ -103,7 +103,7 @@ var displayCurrentWeather = function(city){
         currentCityEl.textContent = city.name;
     var today = document.createElement("span");
         today.setAttribute("id", "today");
-        today.textContent=moment(city.dt.value).format("MMM D, YYYY");
+        today.textContent=moment(city.dt.value).format("ddd MMM D, YYYY");
     var currentTempEl = document.createElement("span");
         currentTempEl.textContent = city.main.temp + " F";
     var currentWindEl = document.createElement("span");
@@ -119,6 +119,33 @@ var displayCurrentWeather = function(city){
 };
 
 var displayFiveDayWeather = function(info) {
+    currentSearchgitUvIndexEl.textContent="";
+    dayOneSearchEl.textContent="";
+    dayTwoSearchEl.textContent="";
+    dayThreeSearchEl.textContent="";
+    dayFourSearchEl.textContent="";
+    dayFiveSearchEl.textContent="";
+    dayOneSearchForecastEl.textContent="";
+    dayTwoSearchForecastEl.textContent="";
+    dayThreeSearchForecastEl.textContent="";
+    dayFourSearchForecastEl.textContent="";
+    dayFiveSearchForecastEl.textContent="";
+    dayOneSearchTempEl.textContent="";
+    dayTwoSearchTempEl.textContent="";
+    dayThreeSearchTempEl.textContent="";
+    dayFourSearchTempEl.textContent="";
+    dayFiveSearchTempEl.textContent="";
+    dayOneSearchWindEl.textContent="";
+    dayTwoSearchWindEl.textContent="";
+    dayThreeSearchWindEl.textContent="";
+    dayFourSearchWindEl.textContent="";
+    dayFiveSearchWindEl.textContent="";
+    dayOneSearchHumidityEl.textContent="";
+    dayTwoSearchHumidityEl.textContent="";
+    dayThreeSearchHumidityEl.textContent="";
+    dayFourSearchHumidityEl.textContent="";
+    dayFiveSearchHumidityEl.textContent="";
+
     for (let i = 0; i != info.daily.length; i+=8)
 
     console.log(info.daily)
@@ -128,7 +155,7 @@ var displayFiveDayWeather = function(info) {
         currentSearchUvIndexEl.appendChild(currentUvIndexEl);
 
     var dayOneEl = document.createElement("span");
-        dayOneEl.textContent = info.daily[1].dt;
+        dayOneEl.textContent = moment().add(1, 'days').format("ddd MMM D");//info.daily[1].dt;
     var dayOneForecastEl = document.createElement("span");
         dayOneForecastEl.textContent = info.daily[1].weather[0].icon;
     var dayOneTempEl = document.createElement("span");
@@ -139,7 +166,7 @@ var displayFiveDayWeather = function(info) {
         dayOneHumidityEl.textContent = info.daily[1].humidity + " %";
 
     var dayTwoEl = document.createElement("span");
-        dayTwoEl.textContent = info.daily[2].dt;
+        dayTwoEl.textContent = moment().add(2, 'days').format("ddd MMM D");//info.daily[2].dt;
     var dayTwoForecastEl = document.createElement("span");
         dayTwoForecastEl.textContent = info.daily[2].weather[0].icon;
     var dayTwoTempEl = document.createElement("span");
@@ -150,7 +177,7 @@ var displayFiveDayWeather = function(info) {
         dayTwoHumidityEl.textContent = info.daily[2].humidity + " %";
 
     var dayThreeEl = document.createElement("span");
-        dayThreeEl.textContent = info.daily[3].dt;
+        dayThreeEl.textContent = moment().add(3, 'days').format("ddd MMM D");//info.daily[3].dt;
     var dayThreeForecastEl = document.createElement("span");
         dayThreeForecastEl.textContent = info.daily[3].weather[0].icon;    
     var dayThreeTempEl = document.createElement("span");
@@ -161,7 +188,7 @@ var displayFiveDayWeather = function(info) {
         dayThreeHumidityEl.textContent = info.daily[3].humidity + " %";
 
     var dayFourEl = document.createElement("span");
-        dayFourEl.textContent = info.daily[4].dt;
+        dayFourEl.textContent = moment().add(4, 'days').format("ddd MMM D");//info.daily[4].dt;
     var dayFourForecastEl = document.createElement("span");
         dayFourForecastEl.textContent = info.daily[4].weather[0].icon;
     var dayFourTempEl = document.createElement("span");
@@ -172,7 +199,7 @@ var displayFiveDayWeather = function(info) {
         dayFourHumidityEl.textContent = info.daily[4].humidity + " %";
     
     var dayFiveEl = document.createElement("span");
-        dayFiveEl.textContent = info.daily[5].dt;
+        dayFiveEl.textContent = moment().add(5, 'days').format("ddd MMM D");//info.daily[5].dt;
     var dayFiveForecastEl = document.createElement("span");
         dayFiveForecastEl.textContent = info.daily[5].weather[0].icon;
     var dayFiveTempEl = document.createElement("span");

@@ -9,10 +9,12 @@ header {
 
 #today {
     color: blue;
+    font-weight: bold;
 }
+
 .characteristic {
    list-style: none; 
-   font-size: x-large;
+   font-size: xx-large;
    font-weight: bold;
 }
 
@@ -41,7 +43,7 @@ header {
 
 .card p {
     text-align: left;
-    color: white;
+    color: rgb(49, 248, 9);
     font-size: larger;
     padding: 2px 0px 2px 0px;
 }
