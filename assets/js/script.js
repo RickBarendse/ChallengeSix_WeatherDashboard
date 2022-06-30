@@ -190,7 +190,15 @@ var displayFiveDayWeather = function(info) {
     console.log(info.daily)
     var currentUvIndexEl = document.createElement("span");
         currentUvIndexEl.textContent = info.current.uvi; 
-
+        if (info.current.uvi < 3) {
+            currentUvIndexEl.setAttribute("class", "favorable");
+            } else if 
+                (info.current.uvi < 6) {
+                currentUvIndexEl.setAttribute("class", "moderate")
+            } else {
+                (info.current.uvi > 6) 
+                currentUvIndexEl.setAttribute("class", "severe")
+            }
         currentSearchUvIndexEl.appendChild(currentUvIndexEl);
 
     var dayOneEl = document.createElement("span");

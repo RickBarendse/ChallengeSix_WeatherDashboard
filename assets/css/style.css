@@ -71,4 +71,33 @@ header {
     font-size: larger;
   }
 
+  .favorable {
+    background-color: lightgreen;
+    border-left: 40px;
+    border-right: 40px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-color: lightgreen;
+    border-right-color: lightgreen;
+  }
+
+  .moderate {
+    background-color: yellow;
+    border-left: 40px;
+    border-right: 40px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-color: yellow;
+    border-right-color: yellow;
+  }
   
+  .severe {
+    background-color: lightcoral;
+    border-left: 40px;
+    border-right: 40px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-color: lightcoral;
+    border-right-color: lightcoral;
+    
+  }
