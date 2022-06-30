@@ -16,7 +16,9 @@
   No installation required.
 
   ## Usage
-  Access the application via this website:  .  Enter a city name into the search field to see weather for any city.  Revisit a previously searched city by pressing that city fomr the Previously Searched section.
+  Access the application via this website:  https://rickbarendse.github.io/WeatherCentral/
+
+  Enter a city name into the search field to see weather for any city.  Revisit a previously searched city by pressing that city fomr the Previously Searched section.
 
   ## License
   The application is covered by the following license:  MIT
@@ -31,3 +33,5 @@
   Please visit my GitHub Overview page at: https://github.com/RickBarendse
   If you have any questions regardinmg this application please email me at [rick.barendse@Outlook.com](rick.barendse@Outlook.com)
   
+  ## Application Screenshot
+  [Application](/assets/images/screenshot.png)
