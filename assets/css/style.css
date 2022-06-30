@@ -63,4 +63,12 @@ header {
     transform: translate(-1px, -1px);
   }
 
+  .card-body {
+    text-align: center;
+    background-color: lightblue;
+    font-weight: bolder;
+    color: grey;
+    font-size: larger;
+  }
+
   
