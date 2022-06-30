@@ -34,4 +34,4 @@
   If you have any questions regardinmg this application please email me at [rick.barendse@Outlook.com](rick.barendse@Outlook.com)
   
   ## Application Screenshot
-  [Application](/assets/images/screenshot.png)
+  ![Application](/assets/images/screenshot.png)
