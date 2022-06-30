@@ -1,6 +1,7 @@
 // set global variables
 var cityFormEl = document.querySelector("#city-search");
 var cityInputEl = document.querySelector("#city");
+var cityCardEl = document.querySelector("#city-buttons")
 var currentSearchCityEl = document.querySelector("#currentSearch")
 //var currentCityEl = document.querySelector("#selected-city")
 var currentDateEl = document.querySelector("#currentDate")
@@ -36,6 +37,42 @@ var dayFiveSearchWindEl = document.querySelector("#dayFiveWind")
 var dayFiveSearchHumidityEl = document.querySelector("#dayFiveHumidity")
 var apiKey = "ddcbe1b461d070064d430ea95f952674"
 
+var cityArray = [];
+
+var loadCities = function() {
+    var citiesSaved = localStorage.getItem("cityArray")
+    if(!citiesSaved) {
+        return false;
+    }
+
+    citiesSaved = JSON.parse(citiesSaved);
+
+    for (var i=0; i < citiesSaved.length; i++) {
+        displaySearchedCities(citiesSaved[i])
+        cityArray.push(citiesSaved[i])
+    }
+}
+
+// function to save past city searches to local storage
+var saveCities = function() {
+    localStorage.setItem("cities", JSON.stringify(cityArray));
+}
+
+var displaySearchedCities = function(city) {
+    var cityButton= document.createElement("div");
+    cityButton.setAttribute("class", "card");
+    var cityButtonName = document.createElement("div");
+    cityButtonName.setAttribute("class", "card-body search-city");
+    cityButtonName.textContent = city;
+
+    cityButton.appendChild(cityButtonName)
+
+    cityButton.addEventListener("click", function () {
+        getCityData(city)
+    });
+
+    cityCardEl.appendChild(cityButton)
+}
 
 var formSubmitHandler = function(event) {
     event.preventDefault();
@@ -47,14 +84,9 @@ var formSubmitHandler = function(event) {
     } else {
         alert("Please enter a city name.")
     }
-    //saveSearch();
-    //savedSearches(city);
-    }
-
-    // function to save past city searches to local storage
-var saveSearch = function() {
-    localStorage.setItem("cities", JSON.stringify(city));
 }
+
+
 
 // function to get the weather for city in search input
 var getWeather = function(city) {
@@ -80,11 +112,18 @@ var getWeather = function(city) {
                     console.log(info, info.current.uvi)    
                     displayFiveDayWeather(info);
                 })
+
+                var prevSearch = cityArray.includes(city)
+                if (!prevSearch) {
+                    cityArray.push(city)
+                    saveCities()
+                    displaySearchedCities(city)
+                }
             }),
         displayCurrentWeather(data, city);
         });
     });
-}
+};
 
 var displayCurrentWeather = function(city){
      //clear old content
@@ -119,7 +158,7 @@ var displayCurrentWeather = function(city){
 };
 
 var displayFiveDayWeather = function(info) {
-    currentSearchgitUvIndexEl.textContent="";
+    currentSearchUvIndexEl.textContent="";
     dayOneSearchEl.textContent="";
     dayTwoSearchEl.textContent="";
     dayThreeSearchEl.textContent="";
@@ -240,4 +279,4 @@ var displayFiveDayWeather = function(info) {
     dayFiveSearchHumidityEl.appendChild(dayFiveHumidityEl);
 };
 
-    cityFormEl.addEventListener("submit", formSubmitHandler);
+cityFormEl.addEventListener("submit", formSubmitHandler);
