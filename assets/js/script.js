@@ -202,9 +202,9 @@ var displayFiveDayWeather = function(info) {
         currentSearchUvIndexEl.appendChild(currentUvIndexEl);
 
     var dayOneEl = document.createElement("span");
-        dayOneEl.textContent = moment().add(1, 'days').format("ddd MMM D");//info.daily[1].dt;
-    var dayOneForecastEl = document.createElement("span");
-        dayOneForecastEl.textContent = info.daily[1].weather[0].icon;
+        dayOneEl.textContent = moment().add(1, 'days').format("ddd MMM D");
+    var dayOneForecastEl = document.createElement("img");
+        dayOneForecastEl.src = "http://openweathermap.org/img/wn/" + [info.daily[1].weather[0].icon] + "@2x.png";
     var dayOneTempEl = document.createElement("span");
         dayOneTempEl.textContent = info.daily[1].temp.day + " F";
     var dayOneWindEl = document.createElement("span");
@@ -213,9 +213,9 @@ var displayFiveDayWeather = function(info) {
         dayOneHumidityEl.textContent = info.daily[1].humidity + " %";
 
     var dayTwoEl = document.createElement("span");
-        dayTwoEl.textContent = moment().add(2, 'days').format("ddd MMM D");//info.daily[2].dt;
-    var dayTwoForecastEl = document.createElement("span");
-        dayTwoForecastEl.textContent = info.daily[2].weather[0].icon;
+        dayTwoEl.textContent = moment().add(2, 'days').format("ddd MMM D");
+    var dayTwoForecastEl = document.createElement("img");
+        dayTwoForecastEl.src = "http://openweathermap.org/img/wn/" + [info.daily[2].weather[0].icon] + "@2x.png";
     var dayTwoTempEl = document.createElement("span");
         dayTwoTempEl.textContent = info.daily[2].temp.day + " F";
     var dayTwoWindEl = document.createElement("span");
@@ -224,9 +224,9 @@ var displayFiveDayWeather = function(info) {
         dayTwoHumidityEl.textContent = info.daily[2].humidity + " %";
 
     var dayThreeEl = document.createElement("span");
-        dayThreeEl.textContent = moment().add(3, 'days').format("ddd MMM D");//info.daily[3].dt;
-    var dayThreeForecastEl = document.createElement("span");
-        dayThreeForecastEl.textContent = info.daily[3].weather[0].icon;    
+        dayThreeEl.textContent = moment().add(3, 'days').format("ddd MMM D");
+    var dayThreeForecastEl = document.createElement("img");
+        dayThreeForecastEl.src = "http://openweathermap.org/img/wn/" + [info.daily[3].weather[0].icon] + "@2x.png";
     var dayThreeTempEl = document.createElement("span");
         dayThreeTempEl.textContent = info.daily[3].temp.day + " F";
     var dayThreeWindEl = document.createElement("span");
@@ -235,9 +235,9 @@ var displayFiveDayWeather = function(info) {
         dayThreeHumidityEl.textContent = info.daily[3].humidity + " %";
 
     var dayFourEl = document.createElement("span");
-        dayFourEl.textContent = moment().add(4, 'days').format("ddd MMM D");//info.daily[4].dt;
-    var dayFourForecastEl = document.createElement("span");
-        dayFourForecastEl.textContent = info.daily[4].weather[0].icon;
+        dayFourEl.textContent = moment().add(4, 'days').format("ddd MMM D");
+    var dayFourForecastEl = document.createElement("img");
+        dayFourForecastEl.src = "http://openweathermap.org/img/wn/" + [info.daily[4].weather[0].icon] + "@2x.png";
     var dayFourTempEl = document.createElement("span");
         dayFourTempEl.textContent = info.daily[4].temp.day + " F";
     var dayFourWindEl = document.createElement("span");
@@ -246,9 +246,9 @@ var displayFiveDayWeather = function(info) {
         dayFourHumidityEl.textContent = info.daily[4].humidity + " %";
     
     var dayFiveEl = document.createElement("span");
-        dayFiveEl.textContent = moment().add(5, 'days').format("ddd MMM D");//info.daily[5].dt;
-    var dayFiveForecastEl = document.createElement("span");
-        dayFiveForecastEl.textContent = info.daily[5].weather[0].icon;
+        dayFiveEl.textContent = moment().add(5, 'days').format("ddd MMM D");
+    var dayFiveForecastEl = document.createElement("img");
+        dayFiveForecastEl.src = "http://openweathermap.org/img/wn/" + [info.daily[5].weather[0].icon] + "@2x.png";
     var dayFiveTempEl = document.createElement("span");
         dayFiveTempEl.textContent = info.daily[5].temp.day + " F";
     var dayFiveWindEl = document.createElement("span");
