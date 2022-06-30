@@ -68,7 +68,7 @@ var displaySearchedCities = function(city) {
     cityButton.appendChild(cityButtonName)
 
     cityButton.addEventListener("click", function () {
-        getCityData(city)
+        getWeather(city)
     });
 
     cityCardEl.appendChild(cityButton)
